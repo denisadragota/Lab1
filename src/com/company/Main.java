@@ -22,6 +22,13 @@ public class Main {
         System.out.println(obj2.minSum1(new Integer[]{17,45,99,77,40,22}));
         System.out.println(obj2.minSum2(new Integer[]{17,45,99,77,40,22}));
 
+        Aufgabe3 obj3=new Aufgabe3();
+        System.out.println("Aufgabe 3: ");
+        System.out.println(Arrays.toString(obj3.Summe(new int[]{9,2,3,4},new int[]{1,2,3,4})));
+        System.out.println(Arrays.toString(obj3.Differenz(new int[]{1,0,7},new int[]{3,0,3})));
+        System.out.println(Arrays.toString(obj3.Multiplikation(new int[]{9,2,3,4},3)));
+        System.out.println(Arrays.toString(obj3.Division(new int[]{9,2,3,4},3)));
+
     }
 }
 
