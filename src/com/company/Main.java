@@ -29,6 +29,13 @@ public class Main {
         System.out.println(Arrays.toString(obj3.Multiplikation(new int[]{9,2,3,4},3)));
         System.out.println(Arrays.toString(obj3.Division(new int[]{9,2,3,4},3)));
 
+        Aufgabe4 obj4=new Aufgabe4();
+        System.out.println("Aufgabe 4: ");
+        System.out.println(obj4.minTastatur(new double[]{12,6,22}));
+        System.out.println(obj4.maxPreis(new double[]{15,21,3},new double[]{42,6,22}));
+        System.out.println(obj4.maxUsbInBudget(new double[]{12,6,22},20));
+
+
     }
 }
 
