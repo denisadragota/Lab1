@@ -33,7 +33,10 @@ public class Main {
         System.out.println("Aufgabe 4: ");
         System.out.println(obj4.minTastatur(new double[]{12,6,22}));
         System.out.println(obj4.maxPreis(new double[]{15,21,3},new double[]{42,6,22}));
-        System.out.println(obj4.maxUsbInBudget(new double[]{12,6,22},20));
+        System.out.println(obj4.maxInBudget(new double[]{12,6,22},20));
+        System.out.println(obj4.maxSumInBudget(60,new double[]{40,58},new double[]{59,12,9}));
+        System.out.println(obj4.maxSumInBudget(60,new double[]{45,50},new double[]{59,12,4}));
+        System.out.println(obj4.maxSumInBudget(60,new double[]{40,50,60},new double[]{8,12}));
 
 
     }
