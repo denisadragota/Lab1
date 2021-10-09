@@ -4,8 +4,11 @@ import java.util.Arrays;
 
 
 public class Aufgabe3 {
+
     //wir berechnen die Summe je 2 Ziffern von derselben Position und addieren den Rest, der von der vorigen Summe geblieben ist
     //Rest=summe/10, wenn die Summe>9 ist
+    //pre:zahl1=int[], zahl2=int[], zahl1.length==zahl2.length, zahl1, zahl2 enthalten nur Ziffern
+    //post: result=int[], result represantiert eine Zahl=Summe
     public int[] Summe(int[] zahl1, int[] zahl2){
         int n= zahl1.length, rest=0, posSum=0;
         int[] result=new int[n+1]; //Result-Array mit n+1 Positionen (kann eine Ziffer mehr haben, Uberschuss)
@@ -31,7 +34,9 @@ public class Aufgabe3 {
             return result;
     }
 
-    //wir vergleichen die zwei Zahlen und berechnen die Differenz zwischen der grossten und der kleinsten (und stellen ein (-) Zeihen wenn sie verwechselt waren)
+    //wir vergleichen die zwei Zahlen und berechnen die Differenz zwischen der grossten und der kleinsten (und stellen ein (-) Zeichen wenn sie verwechselt waren)
+    //pre:zahl1=int[], zahl2=int[], zahl1.length==zahl2.length,zahl1, zahl2 enthalten nur Ziffern
+    //post: result=int[], result represantiert eine Zahl=Differenz
     public int[] Differenz(int[] zahl1, int[] zahl2){
         int n= zahl1.length, posDiff=0, lastNotNullPos=0;
         int[] result=new int[n]; //Result Array
@@ -73,11 +78,13 @@ public class Aufgabe3 {
         }
         if(negative) //wenn am Anfang beim Vergleich die Differenz der Zahlen negativ sein musste
             result[lastNotNullPos]*=(-1); //wir stellen ein (-) Zeichen vor der ersten nicht-Null Ziffer
-        return result;
+        return Arrays.copyOfRange(result,lastNotNullPos,zahl1.length);
     }
 
-    //wir berechnen die Multiplikation jeder Position mit der gegebenen Ziffer und addieren den Rest, der von der vorigenMultiplikation geblieben ist
+    //wir berechnen die Multiplikation jeder Position mit der gegebenen Ziffer und addieren den Rest, der von der vorigen Multiplikation geblieben ist
     //Rest=multipl/10, wenn die Multipl>9 ist
+    //pre:zahl1=int[], 0<=ziffer<=9, ziffer=int, zahl1 enthalt nur Ziffern
+    //post: result=int[] reprasentiert eine Zahl = Multiplikation
     public int[] Multiplikation(int[] zahl1, int ziffer){
         int n= zahl1.length, rest=0, posMul=0;
         int[] result=new int[n+1]; //Result-Array mit n+1 Positionen (kann eine Ziffer mehr haben, Ubserschuss)
@@ -104,8 +111,13 @@ public class Aufgabe3 {
 
     //berechnen fur jede Position den Quotient also (Position + 10*rest)/ziffer
     //Rest bleibt, wenn eine Division nicht exakt ist, also % ziffer
+    //pre: zahl1=int[], 0<=ziffer<=9, zahl1 enthalt nur Ziffern
+    //post: result=int[] reprasentiert eine Zahl = Division, oder leere array falls ziffer=0
+    //Ausnahme: Division durch 0-> dann wird eine leere Array zuruckgegeben
     public int[] Division(int[] zahl1, int ziffer){
         int n=0, rest=0, posDiv=0;
+        if(ziffer==0)
+            return new int[]{};
         int[] result=new int[zahl1.length]; //Result-Array
         Arrays.setAll(result, p->0);
         while(n<zahl1.length){ //wir beginnen vom Anfang des Arrays
