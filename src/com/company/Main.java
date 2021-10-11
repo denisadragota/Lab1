@@ -8,10 +8,10 @@ public class Main {
 
         Aufgabe1 obj1=new Aufgabe1();
         System.out.println("\nAufgabe 1: ");
-        System.out.println(Arrays.toString(obj1.nichtAusreichend(new Integer[]{17,45,99,77,40,22})));
-        System.out.println((obj1.Durchschnittswert(new Integer[]{17,45,99,77,40,22})));
-        System.out.println(Arrays.toString(obj1.abgerundet(new Integer[]{17,45,99,78,44,22})));
-        System.out.println((obj1.maxAbgerundeteNote(new Integer[]{17,45,99,77,40,22})));
+        System.out.println(Arrays.toString(obj1.nichtAusreichend(new Integer[]{17,45,72,28})));
+        System.out.printf("%.2f\n",(obj1.Durchschnittswert(new Integer[]{17,45,72,28})));
+        System.out.println(Arrays.toString(obj1.abgerundet(new Integer[]{18,45,99,78,44,22,38})));
+        System.out.println((obj1.maxAbgerundeteNote(new Integer[]{18,45,99,77,40,22,38})));
 
         Aufgabe2 obj2=new Aufgabe2();
         System.out.println("\nAufgabe 2: ");
@@ -42,8 +42,6 @@ public class Main {
         System.out.println(obj4.maxSumInBudget(60,new double[]{45,50},new double[]{59,12,4}));
         System.out.println(obj4.maxSumInBudget(60,new double[]{40,50,60},new double[]{8,12}));
         System.out.println(obj4.maxSumInBudget(10,new double[]{40,50,60},new double[]{8,12}));
-
-
     }
 }
 

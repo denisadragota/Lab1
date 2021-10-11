@@ -36,7 +36,7 @@ class Aufgabe2{
         double sum=0;
         for(i=0;i<zahlen.length;i++)
             sum+=zahlen[i];
-        sum-=minimum(zahlen);
+        sum-=minimum(zahlen); //subtrahieren minimum von der Summe allen Zahlen
         return sum;
     }
 
@@ -48,10 +48,10 @@ class Aufgabe2{
         double sum=0,min=zahlen[0];
         for(i=0;i<zahlen.length;i++) {
             sum += zahlen[i];
-            if (zahlen[i] < min)
+            if (zahlen[i] < min) //speichern minimum
                 min = zahlen[i];
         }
-        sum-=min;
+        sum-=min; //subtrahieren minimum von der Summe allen Zahlen
         return sum;
     }
 
@@ -65,7 +65,7 @@ class Aufgabe2{
         double sum=0;
         for(i=0;i<zahlen.length;i++)
             sum+=zahlen[i];
-        sum-=maximum(zahlen);
+        sum-=maximum(zahlen); //subtrahieren maximum von der Summe allen Zahlen
         return sum;
     }
 
@@ -77,7 +77,7 @@ class Aufgabe2{
         double sum=0,max=zahlen[0];
         for(i=0;i<zahlen.length;i++) {
             sum += zahlen[i];
-            if (zahlen[i] > max)
+            if (zahlen[i] > max) //speichern maximum
                 max = zahlen[i];
         }
         sum-=max;

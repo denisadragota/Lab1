@@ -52,8 +52,8 @@ public class Aufgabe4 {
         double maxValueTastatur,maxValueUsb,complInUsb,nr2inTast,nr2inUsb,complInTastatur;
         double budget1=budget, budget2=budget;
         int times=0;//zahlt wie viele Male die Listen von Tastaturen und Usb untersucht sind
-        //name = city.getName() == null ? city.getName() : "N/A"
-        int maximalLength=usb.length>tastaturen.length ? usb.length : tastaturen.length;
+
+        int maximalLength = usb.length>tastaturen.length ? usb.length : tastaturen.length;
         do {
             times++;
             maxValueTastatur = maxInBudget(tastaturen, budget1 - 1); //Zahl1Tast=grosste Preis Tastatur<Budget

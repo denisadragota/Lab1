@@ -21,7 +21,7 @@ class Aufgabe1{
         return arrayResults; //return array
     }
 
-    //durchlauft alle Zahlen und berechnet ihre Summe und am Ende teilt sie mit ihre Anzah
+    //durchlauft alle Zahlen und berechnet ihre Summe und am Ende teilt sie mit ihre Anzahl
     //pre:noten= Integer[]
     //post: Durchscnittswert (double), -1 wenn array leer ist
     //Ausnahmen: wenn die Noten Array leer ist, dann muss man mit 0 teilen und das ist unmoglich, also es gibt zuruck -1
@@ -37,8 +37,8 @@ class Aufgabe1{
     }
 
     //berechnet fur jede Zahl sein nachste Vielfache von 5 und die Differenz zwischen ihnen und bildet eine neue Array mit den abgerundeten Noten
-    //pre:noten= Integer[]
-    //post: arrayResults=Integer[] mit abgerundeten Noten, oder leere array wenn es keine existiert
+    //pre:noten= Integer[],noten.length>0
+    //post: arrayResults=Integer[] mit abgerundeten Noten
     public Integer[] abgerundet(Integer[] noten){
         //bilden eine ArrayList
         ArrayList <Integer> results=new ArrayList <Integer>();
@@ -47,8 +47,10 @@ class Aufgabe1{
             div=noten[i]/5; //ganze Teil von vorige Vielfache von 5
             mul=5*(div+1);//nachste Vielfache von 5
             if(mul-noten[i]<3 && noten[i] >= 38) { //Bedingung fur abgerundete Noten
-                results.add(noten[i]); //add jede Note <40 in die ArrayList
+                results.add(mul); //add jede Note <40 in die ArrayList
             }
+            else
+                results.add(noten[i]);
         }
         Integer[] arrayResults=new Integer[]{}; //bilden eine neue leere array
         arrayResults=results.toArray(arrayResults);//convert die ArrayList in eine array
@@ -56,9 +58,8 @@ class Aufgabe1{
     }
 
     //verwendet die Methode abgerundet() um die abgerundeten Zahlen zu extrahieren und nur zwischen diesen den Maximum zu finden
-    //pre:noten= Integer[]
-    //post:max=int, max ist abgerundete Note, max= grosste abgerundete Note, oder -1 wenn es keine abgerundete Noten exisitiert
-    //Ausnahme: wenn es keine abgerundete Noten gibt, dann wir zuruckgegeben -1
+    //pre:noten= Integer[], noten.length>0
+    //post:max=int, max ist abgerundete Note, max= grosste abgerundete Note
     public int maxAbgerundeteNote(Integer[] noten){
         int i, max=-1;
         Integer[] abgerundeteNoten=abgerundet(noten);//aufrufen Methode abgerundet und speichern die Liste
